@@ -20,3 +20,43 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+#inputs {
+    width: 100%;
+    background-color: teal;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.input {
+    background-color: yellow;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#input-labels {
+    display: flex;
+    flex-direction: column;
+    background-color: pink;
+}
+
+#input-fields {
+    display: flex;
+    flex-direction: column;
+    background-color: yellow;
+}
+
+.input-label {
+    font-size: 20px;
+    font-family: "Trebuchet MS", sans-serif;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.input-field {
+    height: 100%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}

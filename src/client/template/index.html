@@ -16,7 +16,24 @@
 	<h4>Instant stats for your fantasy football league.</h4>
 </div>
 <div id="content">
-	<p>content here</p>
+	<div id="inputs">
+		<div id="input-labels">
+			<label for="league-id" class="input-label">League ID:</label>
+			<label for="site" class="input-label">Fantasy Site:</label>
+		</div>
+
+		<div id="input-fields">
+			<select name="site" id="site" class="input-field">
+				<option value="espn">ESPN</option>
+				<option value="sleeper">Sleeper</option>
+				<option value="yahoo">Yahoo</option>
+			</select>
+
+			<input name="league-id" id="league-id" class="input-field">
+		</div>
+
+	</div>
+	<button>Download Stats</button>
 </div>
 </body>
 
