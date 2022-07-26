@@ -1,5 +1,11 @@
+html {
+    width: 100%;
+    height: 100%;
+    overflow-y: visible;
+}
+
 body {
-    background-color: #40916C;
+    background-color: #40916C !important;
     display: flex;
     flex-direction: column;
 }
