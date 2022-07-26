@@ -11,7 +11,7 @@ staticDir = os.path.join(os.path.dirname(__file__), EnvironmentReader.get("STATI
 app = Flask(__name__, template_folder=templateDir, static_folder=staticDir)
 
 if __name__ == "__main__":
-    from server.controller.indexController import *  # noqa
+    from server.controller.index_controller import *  # noqa
 
     if EnvironmentReader.get("TEST_ENVIRONMENT") == "True":
         app.run(debug=True)
