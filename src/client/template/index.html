@@ -41,24 +41,24 @@
 	<div id="inputs">
 		<div id="input-labels">
 			<label for="league-id" class="input-label">League ID:</label>
-			<label for="site" class="input-label">Fantasy Site:</label>
+			<label for="fantasy-site" class="input-label">Fantasy Site:</label>
 			<label for="years" class="input-label">Years:</label>
 		</div>
 
 		<div id="input-fields">
-			<select name="site" id="site" class="input-field">
+			<input name="league-id" id="league-id" class="input-field">
+
+			<select name="fantasy-site" id="fantasy-site" class="input-field">
 				<option value="espn">ESPN</option>
 				<option value="sleeper">Sleeper</option>
 				<option value="yahoo">Yahoo</option>
 			</select>
 
-			<input name="league-id" id="league-id" class="input-field">
-
-			<input name="league-id" id="years" class="input-field">
+			<input name="years" id="years" class="input-field">
 		</div>
 
 	</div>
-	<button>Download Stats</button>
+	<button onclick="onDownloadStatsButtonPress()">Download Stats</button>
 </div>
 </body>
 

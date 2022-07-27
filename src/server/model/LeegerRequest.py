@@ -16,7 +16,8 @@ class LeegerRequest(JSONDeserializable):
     def from_json(d: dict) -> LeegerRequest:
         fantasy_site = FantasySite.from_str(d["fantasy_site"])
         league_id = d["league_id"]
-        years = d.get("years", list())
+        yearsRaw = d.get("years")
+        years = yearsRaw.split(",")
         return LeegerRequest(fantasy_site=fantasy_site,
                              league_id=league_id,
                              years=years)
