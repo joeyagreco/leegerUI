@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 	<script src="{{ url_for('static', filename='js/general.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/index.js') }}"></script>
 	<!-- Add icon library -->
 	<script src="https://kit.fontawesome.com/e509e6f024.js" crossorigin="anonymous"></script>
 	<!-- Bootstrap imports -->
@@ -41,6 +42,7 @@
 		<div id="input-labels">
 			<label for="league-id" class="input-label">League ID:</label>
 			<label for="site" class="input-label">Fantasy Site:</label>
+			<label for="years" class="input-label">Years:</label>
 		</div>
 
 		<div id="input-fields">
@@ -51,6 +53,8 @@
 			</select>
 
 			<input name="league-id" id="league-id" class="input-field">
+
+			<input name="league-id" id="years" class="input-field">
 		</div>
 
 	</div>
