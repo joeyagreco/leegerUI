@@ -11,6 +11,7 @@ app = Flask(__name__, template_folder=templateDir, static_folder=staticDir)
 
 if __name__ == "__main__":
     from server.controller.index_controller import *  # noqa
+    from server.controller.leeger_controller import *  # noqa
 
     if eval(EnvironmentReader.get("TEST_ENVIRONMENT")):
         app.run(debug=True)
