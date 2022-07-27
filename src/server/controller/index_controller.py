@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template, url_for, redirect
+from flask import render_template, url_for, redirect, request
 
 
 @app.route('/favicon.ico')
@@ -12,4 +12,5 @@ def favicon():
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    error_message = request.args.get("error_message")
+    return render_template("index.html", error_message=error_message)

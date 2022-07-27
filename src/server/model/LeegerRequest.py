@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from src.server.enum.FantasySite import FantasySite
+from src.server.exception.BadRequestException import BadRequestException
 from src.server.model.JSONDeserializable import JSONDeserializable
 
 
@@ -14,10 +15,14 @@ class LeegerRequest(JSONDeserializable):
 
     @staticmethod
     def from_json(d: dict) -> LeegerRequest:
-        fantasy_site = FantasySite.from_str(d["fantasy_site"])
-        league_id = d["league_id"]
-        yearsRaw = d.get("years")
-        years = yearsRaw.split(",")
-        return LeegerRequest(fantasy_site=fantasy_site,
-                             league_id=league_id,
-                             years=years)
+        try:
+            fantasy_site = FantasySite.from_str(d["fantasy_site"])
+            league_id = d["league_id"]
+            years_raw = d.get("years", list())
+            years = years_raw.split(",") if not isinstance(years_raw, list) else years_raw
+            # TODO: validate this
+            return LeegerRequest(fantasy_site=fantasy_site,
+                                 league_id=league_id,
+                                 years=years)
+        except Exception as e:
+            raise BadRequestException(str(e))
