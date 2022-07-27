@@ -46,7 +46,7 @@
 		</div>
 
 		<div id="input-fields">
-			<input name="league-id" id="league-id" class="input-field">
+			<input name="league-id" id="league-id" class="input-field" onkeyup="checkIfValidInput()">
 
 			<select name="fantasy-site" id="fantasy-site" class="input-field">
 				<option value="espn">ESPN</option>
@@ -54,11 +54,12 @@
 				<option value="yahoo">Yahoo</option>
 			</select>
 
-			<input name="years" id="years" class="input-field" onkeyup="validateYearsInput()">
+			<input name="years" id="years" class="input-field" onkeyup="fixYearsInput()">
 		</div>
 
 	</div>
-	<button onclick="onDownloadStatsButtonPress()">Download Stats</button>
+	<button id="download-stats-button" class="disabled" onclick="onDownloadStatsButtonPress()" disabled>Download Stats
+	</button>
 </div>
 </body>
 
