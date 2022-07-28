@@ -51,14 +51,14 @@ function isValidYearsInput(yearsStr) {
 }
 
 function checkIfValidInput() {
-    // does basic validation on league info and enables/disables download button accordingly
+    // does basic validation on league info and enables/disables calculate stats button accordingly
     const leagueId = document.getElementById("league-id").value;
     const years = document.getElementById("years").value;
-    let downloadButtonElement = document.getElementById("download-stats-button");
+    let calculateStatsButtonElement = document.getElementById("calculate-stats-button");
     if (leagueId === "" || !isValidYearsInput(years)) {
-        disableElement(downloadButtonElement);
+        disableElement(calculateStatsButtonElement);
     } else {
-        enableElement(downloadButtonElement);
+        enableElement(calculateStatsButtonElement);
     }
 }
 
