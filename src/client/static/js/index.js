@@ -29,11 +29,15 @@ function fixYearsInput() {
 }
 
 function isValidYearsInput(yearsStr) {
+    // base cases
+    const yearsInputElement = document.getElementById("years");
+    if (yearsInputElement.disabled) {
+        return true;
+    }
     if (yearsStr === "") {
         return false;
     }
     let years = yearsStr.split(",");
-    console.log(years);
     for (let i = 0; i < years.length; i++) {
         const year = years[i]
         if (year === "") {
@@ -50,21 +54,23 @@ function checkIfValidInput() {
     // does basic validation on league info and enables/disables download button accordingly
     const leagueId = document.getElementById("league-id").value;
     const years = document.getElementById("years").value;
+    let downloadButtonElement = document.getElementById("download-stats-button");
     if (leagueId === "" || !isValidYearsInput(years)) {
-        disableDownloadButton();
+        disableElement(downloadButtonElement);
     } else {
-        enableDownloadButton();
+        enableElement(downloadButtonElement);
     }
 }
 
-function disableDownloadButton() {
-    const downloadButton = document.getElementById("download-stats-button");
-    downloadButton.classList.add("disabled")
-    downloadButton.disabled = true;
-}
-
-function enableDownloadButton() {
-    const downloadButton = document.getElementById("download-stats-button");
-    downloadButton.classList.remove("disabled")
-    downloadButton.disabled = false;
+function onFantasySiteChange() {
+    const fantasySite = document.getElementById("fantasy-site").value;
+    const yearsElement = document.getElementById("years");
+    const yearsRequiredForSite = ["espn", "yahoo"];
+    if (yearsRequiredForSite.includes(fantasySite)) {
+        enableElement(yearsElement);
+    } else {
+        yearsElement.value = "";
+        disableElement(yearsElement);
+    }
+    checkIfValidInput();
 }

@@ -13,6 +13,16 @@ function redirect(path) {
     window.location = path;
 }
 
+function enableElement(element) {
+    element.classList.remove("disabled");
+    element.disabled = false;
+}
+
+function disableElement(element) {
+    element.classList.add("disabled");
+    element.disabled = true;
+}
+
 // method for sending POST requests
 window.post = function (url, data) {
     return fetch(url, {method: "POST", body: JSON.stringify(data)});
