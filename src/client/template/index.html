@@ -46,14 +46,19 @@
 	<span class="error-message" id="error-message-fill_2"></span>
 </div>
 <div id="content">
-	<div id="inputs">
-		<div id="input-labels">
+
+	<div class="input-section-title">
+		Required
+	</div>
+
+	<div class="inputs" id="required-inputs">
+		<div class="input-labels">
 			<label for="league-id" class="input-label">League ID:</label>
 			<label for="fantasy-site" class="input-label">Fantasy Site:</label>
 			<label for="years" class="input-label">Years:</label>
 		</div>
 
-		<div id="input-fields">
+		<div class="input-fields">
 			<input name="league-id" id="league-id" class="input-field" onkeyup="checkIfValidInput()">
 
 			<select name="fantasy-site" id="fantasy-site" class="input-field" onchange="onFantasySiteChange()">
@@ -64,12 +69,29 @@
 
 			<input name="years" id="years" class="input-field" onkeyup="fixYearsInput()">
 		</div>
+	</div>
 
+	<div class="input-section-title">
+		Optional
+	</div>
+
+	<div class="inputs" id="optional-inputs">
+		<div class="input-labels">
+			<label for="years" class="input-label">Owner Name and Aliases:</label>
+		</div>
+
+		<div class="input-fields">
+			<div class="input-field" id="owner-name-and-alias">
+				<input name="owner-name" placeholder="Owner Name">
+				<input name="owner-aliases" placeholder="Aliases">
+				<button class="add-owner-name-and-aliases-button">+</button>
+			</div>
+
+		</div>
 	</div>
 	<button id="calculate-stats-button" class="disabled" onclick="onCalculateStatsButtonPress()" disabled>Calculate
 		Stats
 	</button>
-</div>
 </body>
 
 </html>
