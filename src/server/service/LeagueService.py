@@ -47,5 +47,4 @@ class LeagueService:
             numbered_file_name = f"{file_name}({number})"
             number += 1
             full_path = os.path.join(directory_path, f"{numbered_file_name}.xlsx")
-        print(full_path)
         return full_path
