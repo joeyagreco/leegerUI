@@ -2,7 +2,10 @@ function onCalculateStatsButtonPress() {
     startLoading();
     const leagueId = document.getElementById("league-id").value;
     const fantasySite = document.getElementById("fantasy-site").value;
-    const years = document.getElementById("years").value;
+    let years = document.getElementById("years").value;
+    if (years === "") {
+        years = [];
+    }
     const data = {
         "league_id": leagueId,
         "fantasy_site": fantasySite,

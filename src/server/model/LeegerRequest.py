@@ -11,7 +11,7 @@ from src.server.model.JSONDeserializable import JSONDeserializable
 class LeegerRequest(JSONDeserializable):
     fantasy_site: FantasySite
     league_id: str | int
-    years: list[str]
+    years: list[int]
 
     @staticmethod
     def from_json(d: dict) -> LeegerRequest:
@@ -20,6 +20,7 @@ class LeegerRequest(JSONDeserializable):
             league_id = d["league_id"]
             years_raw = d.get("years", list())
             years = years_raw.split(",") if not isinstance(years_raw, list) else years_raw
+            years = [int(year) for year in years]
             # TODO: validate this
             return LeegerRequest(fantasy_site=fantasy_site,
                                  league_id=league_id,
