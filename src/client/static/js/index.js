@@ -1,4 +1,5 @@
-function onDownloadStatsButtonPress() {
+function onCalculateStatsButtonPress() {
+    startLoading();
     const leagueId = document.getElementById("league-id").value;
     const fantasySite = document.getElementById("fantasy-site").value;
     const years = document.getElementById("years").value;
